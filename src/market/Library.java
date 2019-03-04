@@ -1,0 +1,34 @@
+package market;
+
+import java.util.HashMap;
+
+public class Library {
+
+	HashMap<String, Double> library;
+	
+	public Library() {
+		library  = new HashMap<>();
+		addLibrary();
+		
+		printLibrary();
+	}
+	
+	private void addLibrary() {
+		library.put("Bubsy 3D", 29.99);
+		library.put("Bad Rats", 17.99);
+		library.put("E.T. the Extra-Terrestrial", 4.20);
+		library.put("Bubsy: The Woolies Strike Back", 0.69);
+		library.put("Mighty No. 9", 3.50);
+		library.put("Pixel Hunter", 19.99);
+		library.put("Desert Bus", 69.99);
+		library.put("Fortnite", 10.00);
+		library.put("Bubsy 4D: The Return of Bubsy", 59.99);
+		library.put("Nya Nya Nya Girls (=^•w•^=)",  29.99);
+	}
+	
+	public void printLibrary() {
+		for(String bruh : library.keySet()) {
+			System.out.println("$" + library.get(bruh) + " \t" + bruh);
+		}
+	}
+}
