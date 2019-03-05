@@ -6,11 +6,10 @@ import java.util.HashMap;
 
 public class Library {
 
-	HashMap<String, Double> library;
+	public static final HashMap<String, Double> library = new HashMap<>();;
 	NumberFormat f;
 	
 	public Library() {
-		library  = new HashMap<>();
 		f  = new DecimalFormat("#00.00");
 		addLibrary();
 		
