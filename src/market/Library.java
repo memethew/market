@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Library {
 
-	public static final HashMap<String, Double> library = new HashMap<>();;
+	public static final HashMap<String, Double> library = new HashMap<>();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	NumberFormat f;
 	
 	public Library() {
