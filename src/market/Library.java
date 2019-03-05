@@ -1,13 +1,17 @@
 package market;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashMap;
 
 public class Library {
 
 	HashMap<String, Double> library;
+	NumberFormat f;
 	
 	public Library() {
 		library  = new HashMap<>();
+		f  = new DecimalFormat("#00.00");
 		addLibrary();
 		
 		printLibrary();
@@ -27,8 +31,8 @@ public class Library {
 	}
 	
 	public void printLibrary() {
-		for(String bruh : library.keySet()) {
-			System.out.println("$" + library.get(bruh) + " \t" + bruh);
+		for(String game : library.keySet()) {
+			System.out.println("$ " + f.format(library.get(game)) + " \t" + game);
 		}
 	}
 }
