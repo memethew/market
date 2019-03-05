@@ -2,7 +2,7 @@ package market;
 
 import java.util.HashMap;
 
-public class Cart extends Library{
+public class Cart {
 
 	private double total;
 	
