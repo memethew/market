@@ -31,7 +31,7 @@ public class Library {
 	
 	public static void printLibrary() {
 		for(String game : library.keySet()) {
-			System.out.println("$ " + f.format(library.get(game)) + " \t" + game);
+			System.out.println(" $" + f.format(library.get(game)) + " \t" + game);
 		}
 	}
 }

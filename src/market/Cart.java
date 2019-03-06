@@ -30,7 +30,11 @@ public class Cart {
 			if(Library.library.containsKey(input)) {
 				System.out.println("You have added " + input + " to your cart!");
 				total += Library.library.get(input);
-				System.out.println("Your total is: " + total);
+				System.out.println("Your total is: $" + Library.f.format(total));
+			}
+			if (input.equals("checkout")) {
+				checkout();
+				break;
 			}
 		}
 	}
@@ -43,11 +47,6 @@ public class Cart {
 		System.out.println("Your total is currently $" + Library.f.format(total));
 	}
 
-	public void coupon() {
-		System.out.println(randomAlphaNumeric(10));
-	}
-	
-
 	public static String randomAlphaNumeric(int count) {
 		StringBuilder builder = new StringBuilder();
 		while (count-- != 0) {
@@ -55,5 +54,18 @@ public class Cart {
 			builder.append(ALPHA_NUMERIC_STRING.charAt(character));
 		}
 		return builder.toString();
+	}
+	
+	public void checkout() {
+		String code = randomAlphaNumeric(5);
+		int discount = (int) (Math.random()*50);
+		System.out.println("You can enter coupon code " + code + " to get a " + discount + "% discount!");
+		System.out.println("Enter a coupon code: ");
+		if (scanner.nextLine().equalsIgnoreCase(code)) {
+			total *= (1-discount*.01);
+			System.out.println("Coupon code applied! Your new total is $" + Library.f.format(total));
+		} else {
+			System.out.println("Invalid coupon code! Your final total is $" + Library.f.format(total));
+		}
 	}
 }
