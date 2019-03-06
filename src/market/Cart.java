@@ -8,12 +8,14 @@ public class Cart {
 	private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	private double total;
 	private HashMap<String, Double> games;
+	private HashMap<String, Integer> cart;
 	private Scanner scanner;
 
 
 	public Cart() {
 		total = 0;
 		games = Library.library;
+		cart = new HashMap<>();
 		scanner = new Scanner(System.in);
 		shop();
 	}
@@ -40,9 +42,15 @@ public class Cart {
 	}
 
 	public void addToCart(String game) {
+		
+		for(String g : games.keySet()) {
+			cart.put(g, 0);
+		}
+		
 		if (games.containsKey(game)) {
 			System.out.println("You added " + game + " to your cart.");
 			total += games.get(game);
+			// TODO ADD COUNTER
 		}
 		System.out.println("Your total is currently $" + Library.f.format(total));
 	}
