@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class Library {
 
 	public static final HashMap<String, Double> library = new HashMap<>();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	NumberFormat f;
+	public static NumberFormat f;
 	
 	public Library() {
 		f  = new DecimalFormat("#00.00");
