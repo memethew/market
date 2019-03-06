@@ -6,14 +6,14 @@ import java.util.HashMap;
 
 public class Library {
 
-	public static final HashMap<String, Double> library = new HashMap<>();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	public static HashMap<String, Double> library = new HashMap<>();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	public static NumberFormat f;
+	private Cart cart;
 	
 	public Library() {
 		f  = new DecimalFormat("#00.00");
 		addLibrary();
-		
-		printLibrary();
+		cart = new Cart();
 	}
 	
 	private void addLibrary() {
@@ -29,7 +29,7 @@ public class Library {
 		library.put("Nya Nya Nya Girls (=^•w•^=)",  29.99);
 	}
 	
-	public void printLibrary() {
+	public static void printLibrary() {
 		for(String game : library.keySet()) {
 			System.out.println("$ " + f.format(library.get(game)) + " \t" + game);
 		}
