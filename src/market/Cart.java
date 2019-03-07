@@ -15,7 +15,11 @@ public class Cart {
 	public Cart() {
 		total = 0;
 		games = Library.library;
-		cart = new HashMap<>();
+		cart = new HashMap<String, Integer>();
+		for(String g : games.keySet()) {
+			cart.put(g, 0);
+		}
+		System.out.println(cart);
 		scanner = new Scanner(System.in);
 		shop();
 	}
@@ -33,26 +37,17 @@ public class Cart {
 				System.out.println("You have added " + input + " to your cart!");
 				total += Library.library.get(input);
 				System.out.println("Your total is: $" + Library.f.format(total));
+				cart.put(input, cart.get(input) + 1);
 			}
-			if (input.equals("checkout")) {
+			else if(input.equals("cart")) 
+				printCart();
+			else if (input.equals("checkout")) {
 				checkout();
 				break;
 			}
+			else
+				System.out.println("Invalid command, n00b!");
 		}
-	}
-
-	public void addToCart(String game) {
-		
-		for(String g : games.keySet()) {
-			cart.put(g, 0);
-		}
-		
-		if (games.containsKey(game)) {
-			System.out.println("You added " + game + " to your cart.");
-			total += games.get(game);
-			// TODO ADD COUNTER
-		}
-		System.out.println("Your total is currently $" + Library.f.format(total));
 	}
 
 	public static String randomAlphaNumeric(int count) {
@@ -62,6 +57,14 @@ public class Cart {
 			builder.append(ALPHA_NUMERIC_STRING.charAt(character));
 		}
 		return builder.toString();
+	}
+	
+	public void printCart() {
+		System.out.println("Here is your awesome cart!");
+		for(String g : cart.keySet()) {
+			if(cart.get(g) != 0)
+				System.out.println(cart.get(g) + "\t" + g);
+		}
 	}
 	
 	public void checkout() {
