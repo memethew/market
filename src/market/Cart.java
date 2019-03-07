@@ -47,6 +47,7 @@ public class Cart {
 			}
 			else
 				System.out.println("Invalid command, n00b!");
+			System.out.println("Type 'checkout' or 'cart' to checkout or go check your cart!");
 		}
 	}
 
@@ -69,7 +70,7 @@ public class Cart {
 	
 	public void checkout() {
 		String code = randomAlphaNumeric(5);
-		int discount = (int) (Math.random()*50);
+		int discount = (int) (Math.random()*60);
 		System.out.println("You can enter coupon code " + code + " to get a " + discount + "% discount!");
 		System.out.println("Enter a coupon code: ");
 		if (scanner.nextLine().equalsIgnoreCase(code)) {
