@@ -38,7 +38,7 @@ public abstract class Employee {
 	}
 	
 	public abstract float calculateSalary();
-	public abstract String calculateBenefits();
+	public abstract String getBenefits();
 	public abstract float calculateChanceToBeFired();
 	public abstract String toString();
 	

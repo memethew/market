@@ -8,11 +8,11 @@ public class FullTimeGuy extends Employee {
 
 	@Override
 	public float calculateSalary() {
-		return 0;
+		return (float) ((super.getYears() * 35000) * (Math.pow(.95, super.getYears())));
 	}
 
 	@Override
-	public String calculateBenefits() {
+	public String getBenefits() {
 		return 0;
 	}
 
