@@ -2,17 +2,17 @@ package employee;
 
 public class FullTimeGuy extends Employee {
 
-	protected FullTimeGuy(String name, int age) {
-		super(name, age);
+	protected FullTimeGuy(String name, int age, int years) {
+		super(name, age, years);
 	}
 
 	@Override
-	public short calculateSalary() {
+	public float calculateSalary() {
 		return 0;
 	}
 
 	@Override
-	public long calculateBenefits() {
+	public String calculateBenefits() {
 		return 0;
 	}
 
